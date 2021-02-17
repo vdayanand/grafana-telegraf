@@ -1,15 +1,23 @@
 version: '2.2'
 services:
   telegraf:
-    image: library/telegraf:1.14-alpine
+    image: library/telegraf:1.17-alpine
     volumes:
     - ./telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    - /:/hostfs:ro
     depends_on:
       - influxdb
     links:
       - influxdb
     ports:
     - '8125:8125/udp'
+    environment:
+    - HOST_ETC=/hostfs/etc
+    - HOST_PROC=/hostfs/proc
+    - HOST_SYS=/hostfs/sys
+    - HOST_VAR=/hostfs/var
+    - HOST_RUN=/hostfs/run
+    - HOST_MOUNT_PREFIX=/hostfs
 
   influxdb:
     image: influxdb:1.8-alpine
@@ -21,7 +29,7 @@ services:
       - influxdb_data:/var/lib/influxdb
 
   grafana:
-    image: grafana/grafana:6.7.0
+    image: grafana/grafana:7.3.5
     depends_on:
       - influxdb
     env_file: .env
