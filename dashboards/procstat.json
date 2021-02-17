@@ -1,0 +1,244 @@
+{
+  "columns": [],
+  "datasource": "$datasource",
+  "fieldConfig": {
+    "defaults": {
+      "custom": {}
+    },
+    "overrides": []
+  },
+  "fontSize": "80%",
+  "gridPos": {
+    "h": 9,
+    "w": 24,
+    "x": 0,
+    "y": 1
+  },
+  "id": 65060,
+  "interval": "$inter",
+  "links": [],
+  "pageSize": 100,
+  "scroll": false,
+  "showHeader": true,
+  "sort": {
+    "col": 6,
+    "desc": true
+  },
+  "styles": [
+    {
+      "alias": "Time",
+      "align": "auto",
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "pattern": "Time",
+      "type": "date"
+    },
+    {
+      "alias": "Pid",
+      "align": "auto",
+      "colorMode": "value",
+      "colors": [
+        "rgba(214, 65, 65, 0.93)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 0,
+      "pattern": "procstat.pid",
+      "thresholds": [],
+      "type": "number",
+      "unit": "none"
+    },
+    {
+      "alias": "VMS",
+      "align": "auto",
+      "colorMode": "value",
+      "colors": [
+        "rgba(94, 175, 40, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(42, 184, 36, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 2,
+      "pattern": "procstat.memory_vms",
+      "thresholds": [],
+      "type": "number",
+      "unit": "bytes"
+    },
+    {
+      "alias": "RSS",
+      "align": "auto",
+      "colorMode": "value",
+      "colors": [
+        "rgba(71, 164, 224, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 2,
+      "pattern": "procstat.memory_rss",
+      "thresholds": [],
+      "type": "number",
+      "unit": "bytes"
+    },
+    {
+      "alias": "Swap",
+      "align": "auto",
+      "colorMode": "value",
+      "colors": [
+        "rgba(210, 167, 33, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 1,
+      "pattern": "procstat.memory_swap",
+      "thresholds": [],
+      "type": "number",
+      "unit": "bytes"
+    },
+    {
+      "alias": "CPU Usage",
+      "align": "auto",
+      "colorMode": "value",
+      "colors": [
+        "rgba(233, 45, 229, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 2,
+      "pattern": "procstat.cpu_usage",
+      "thresholds": [],
+      "type": "number",
+      "unit": "percent"
+    },
+    {
+      "alias": "CPU Time User",
+      "align": "auto",
+      "colorMode": "value",
+      "colors": [
+        "rgba(237, 122, 63, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 2,
+      "link": false,
+      "pattern": "procstat.cpu_time_user",
+      "thresholds": [],
+      "type": "number",
+      "unit": "s"
+    },
+    {
+      "alias": "CPU IO Wait",
+      "align": "auto",
+      "colorMode": "value",
+      "colors": [
+        "rgba(237, 122, 63, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 2,
+      "link": false,
+      "pattern": "procstat.cpu_time_iowait",
+      "thresholds": [],
+      "type": "number",
+      "unit": "s"
+    },
+    {
+      "alias": "Pattern",
+      "align": "auto",
+      "colorMode": null,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 2,
+      "pattern": "procstat.pattern",
+      "preserveFormat": true,
+      "sanitize": false,
+      "thresholds": [],
+      "type": "string",
+      "unit": "short"
+    },
+    {
+      "alias": "Process Name",
+      "align": "auto",
+      "colorMode": null,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 2,
+      "pattern": "procstat.process_name",
+      "preserveFormat": true,
+      "thresholds": [],
+      "type": "string",
+      "unit": "short"
+    },
+    {
+      "alias": "Host",
+      "align": "auto",
+      "colorMode": null,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimals": 2,
+      "pattern": "procstat.host",
+      "thresholds": [],
+      "type": "string",
+      "unit": "short"
+    },
+    {
+      "alias": "",
+      "align": "auto",
+      "colorMode": null,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "decimals": 2,
+      "pattern": "/.*/",
+      "thresholds": [],
+      "type": "number",
+      "unit": "short"
+    }
+  ],
+  "targets": [
+    {
+      "dsType": "influxdb",
+      "groupBy": [],
+      "hide": false,
+      "measurement": "procstat",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "query": "SELECT host, pid, memory_vms, memory_rss, memory_swap, cpu_usage, cpu_time_user, cpu_time_iowait, process_name FROM \"procstat\" WHERE \"host\" =~ /$server$/ AND $timeFilter",
+      "rawQuery": true,
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "memory_vms"
+            ],
+            "type": "field"
+          }
+        ]
+      ],
+      "tags": []
+    }
+  ],
+  "title": "Process \"Top\"",
+  "transform": "timeseries_to_columns",
+  "type": "table-old"
+}
