@@ -18,6 +18,10 @@ services:
     - HOST_VAR=/hostfs/var
     - HOST_RUN=/hostfs/run
     - HOST_MOUNT_PREFIX=/hostfs
+    # Tweak to avoid many apparmor errors
+    # https://github.com/influxdata/telegraf/issues/6574
+    security_opt:
+    - apparmor:unconfined
 
   influxdb:
     image: influxdb:1.8-alpine
