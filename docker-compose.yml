@@ -5,6 +5,7 @@ services:
     volumes:
     - ./telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     - /:/hostfs:ro
+    - influx_socket_vol:/var/run/influxdb
     depends_on:
       - influxdb
     links:
@@ -18,6 +19,11 @@ services:
     - HOST_VAR=/hostfs/var
     - HOST_RUN=/hostfs/run
     - HOST_MOUNT_PREFIX=/hostfs
+    env_file: .env
+    # Tweak to avoid many apparmor errors
+    # https://github.com/influxdata/telegraf/issues/6574
+    security_opt:
+    - apparmor:unconfined
 
   influxdb:
     image: influxdb:1.8-alpine
@@ -25,8 +31,10 @@ services:
     ports:
       - '127.0.0.1:8086:8086'
     volumes:
+      - ./influxdb/etc/influxdb.conf:/etc/influxdb/influxdb.conf:ro
       - ./:/imports
       - influxdb_data:/var/lib/influxdb
+      - influx_socket_vol:/var/run/influxdb
 
   grafana:
     image: grafana/grafana:7.3.5
@@ -45,3 +53,4 @@ services:
 volumes:
   grafana_data: {}
   influxdb_data: {}
+  influx_socket_vol: {}
