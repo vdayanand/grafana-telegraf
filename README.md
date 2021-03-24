@@ -21,7 +21,7 @@ computer which is being monitored with telegraf.
     3. Configure Influx HTTP endpoint (http://influxdb:8086 - the grafana
        backend can find this server name via the internal docker network.)
     4. Set Database name `telegraf_metrics`
-    5. Credentials as set in `.env`
+    5. Credentials and your host name as set in `.env`
 5. Setup dashboards
    1. System metrics:
       a. Go to http://localhost:3001/dashboard/import
